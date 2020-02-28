@@ -16,14 +16,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
+DEBUG_SECRET_KEY='9!qe0pe)oxg(in9dvazeate8rp2y2&%i_i22@#nk03x5i^*cxw'
+SECRET_KEY = os.environ.get('SEGRETO_DI_FATIMA', DEBUG_SECRET_KEY)
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9!qe0pe)oxg(in9dvazeate8rp2y2&%i_i22@#nk03x5i^*cxw'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (SECRET_KEY == DEBUG_SECRET_KEY)
 
 ALLOWED_HOSTS = [
     'dipreazione.perpli.me',
