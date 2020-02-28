@@ -1,0 +1,8 @@
+<h1>creamela</h1>
+
+<form action="{% url 'new_meating' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+

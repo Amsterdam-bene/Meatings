@@ -1,0 +1,41 @@
+<h1>{{ meating.name }}</h1>
+<h2> D I P R E A Z I O N E</h2>
+
+<table>
+
+<tr>
+<td></td>
+{% for d in potential_dates %}
+<td>{{ d }}</td>
+{% endfor %}
+<td></td>
+</tr>
+
+
+{% for r in rows %}
+<tr>
+<td>{{ r.meater }}</td>
+
+{% for d in r.p %}
+<td>{{ d }}</td>
+{% endfor %}
+</tr>
+
+{% endfor %}
+
+
+<form method="POST" action="{% url 'submit_meating' meating.id %}">
+{% csrf_token %}
+<tr>
+
+<td><input type="text" name="meater"></td>
+
+{% for d in potential_dates %}
+<td><input type="checkbox" name="dates" value="{{ d|date:"dmY" }}"></td>
+{% endfor %}
+<td><input type="submit"></td>
+</tr>
+
+</form>
+
+</table>
