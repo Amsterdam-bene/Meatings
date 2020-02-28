@@ -1,0 +1,113 @@
+body {
+  background: #f0f7fa;
+  font-family: sans-serif;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
+tr {
+  padding: 0;
+  margin: 0;
+}
+
+td, th {
+  padding: 10px;
+  margin: 0;
+  border: 0;
+}
+
+th {
+  background: white;
+  border: 0px;
+  position: sticky;
+}
+
+th:first-child {
+  left: 0;  
+}
+
+th:last-child {
+  right: 0;  
+}
+
+#cont {
+  postition: relative;
+  left: 0;
+  right: 0;
+  
+  padding: 0;
+
+  overflow: scroll;
+  overflow-y: auto;
+}
+
+#header {
+  margin-bottom: 40px
+}
+
+#header:after {
+  clear: both;
+  display: table;
+  content: "";
+}
+
+#avvocato {
+  position: relative;
+  float: left;
+}
+
+#avvocato img {
+  border-radius: 50%;
+  border: 5px solid white;
+  width: 150px;
+  height: 150px;
+}
+
+#cose {
+  margin-top: 20px;
+  margin-left: 30px;
+  height: 150px;
+  
+  position:  relative;
+  float: left;
+}
+
+#tag1 {
+  letter-spacing: 6px;
+  font-size: 0.7em;
+  margin: 0px;
+  padding: 0px;
+}
+
+#tag2 {
+  font-size: 2em;
+  letter-spacing: 8px;
+  font-weight: 800;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 5px;
+}
+
+.date {
+    text-align: center;
+}
+
+.month {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+.day {
+    font-size: 2em;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.dow {
+    font-size:  0.9em;
+}
+

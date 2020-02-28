@@ -1,39 +1,66 @@
-<h1>{{ meating.name }}</h1>
-<h2> D I P R E A Z I O N E</h2>
+{% load static %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'dipreazione/style.css' %}">
+
+<body>
+<div id="header">
+
+<div id="avvocato">
+<img  src="https://pbs.twimg.com/profile_images/667302553692991488/qroZ844D_400x400.jpg">
+</div>
+<div id="cose">
+<div id="tag1">ANDREA DIPR&Egrave; PER L'AH&bullet;FR&Igrave;&bullet;CA</div>
+<div id="tag2">DIPREAZIONE</div>
+<hr>
+<div id="name">{{ meating.name }}</div>
+</div>
+
+
+</div>
+
+
+<div id='cont'>
 <table>
 
+
 <tr>
-<td></td>
+<th></th>
 {% for d in potential_dates %}
-<td>{{ d }}</td>
+<td>
+    <div class="date">
+        <div class="month">{{ d|date:"M" }}</div>
+        <div class="day">{{ d|date:"j" }}</div>
+        <div class="dow">{{ d|date:"D" }}</div>
+    </div>
+</td>
 {% endfor %}
-<td></td>
+<th></th>
 </tr>
 
 
 {% for r in rows %}
 <tr>
-<td>{{ r.meater }}</td>
+<th>{{ r.meater }}</th>
 
 {% for d in r.p %}
 <td>{{ d }}</td>
 {% endfor %}
+
+<th></th>
 </tr>
-
 {% endfor %}
-
 
 <form method="POST" action="{% url 'submit_meating' meating.id %}">
 {% csrf_token %}
 <tr>
 
-<td><input type="text" name="meater"></td>
+<th><input type="text" name="meater"></th>
 
 {% for d in potential_dates %}
 <td><input type="checkbox" name="dates" value="{{ d|date:"dmY" }}"></td>
 {% endfor %}
-<td><input type="submit"></td>
+
+<th><input type="submit"></th>
 </tr>
 
 </form>
