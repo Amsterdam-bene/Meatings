@@ -12,10 +12,13 @@ tr {
   margin: 0;
 }
 
+table {
+    border-spacing: 4px;
+}
+
 td, th {
-  padding: 10px;
-  margin: 0;
-  border: 0;
+  text-align: center;
+    padding: 0px;
 }
 
 th {
@@ -24,6 +27,16 @@ th {
   position: sticky;
 }
 
+.si {
+    background: #cdea91;
+    padding: 10px;
+}
+
+.no {
+    color: gray;
+    background: lightgray;
+    padding: 10px;
+}
 th:first-child {
   left: 0;  
 }
@@ -40,6 +53,7 @@ th:last-child {
   padding: 0;
 
   overflow: scroll;
+  overflow-x: auto;
   overflow-y: auto;
 }
 
@@ -111,3 +125,17 @@ th:last-child {
     font-size:  0.9em;
 }
 
+.blank-th {
+    background: #f0f7fa;
+}
+
+.date-td {
+    background: white;
+    border-bottom: 8px solid #f0f7fa;
+    padding: 10px;
+}
+
+.check {
+    background: white;
+    padding: 10px;
+}

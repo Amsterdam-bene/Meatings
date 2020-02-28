@@ -24,9 +24,9 @@
 
 
 <tr>
-<th></th>
+<th class="blank-th"></th>
 {% for d in potential_dates %}
-<td>
+<td class="date-td">
     <div class="date">
         <div class="month">{{ d|date:"M" }}</div>
         <div class="day">{{ d|date:"j" }}</div>
@@ -34,7 +34,7 @@
     </div>
 </td>
 {% endfor %}
-<th></th>
+<th class="blank-th"></th>
 </tr>
 
 
@@ -43,7 +43,11 @@
 <th>{{ r.meater }}</th>
 
 {% for d in r.p %}
-<td>{{ d }}</td>
+{% if d %}
+<td><div class="si">si</div></td>
+{% else %}
+<td><div class="no">no</div></td>
+{% endif %}
 {% endfor %}
 
 <th></th>
@@ -57,7 +61,14 @@
 <th><input type="text" name="meater"></th>
 
 {% for d in potential_dates %}
-<td><input type="checkbox" name="dates" value="{{ d|date:"dmY" }}"></td>
+<td>
+<label>
+<div class="check">
+<input type="checkbox" name="dates" value="{{ d|date:"dmY" }}">
+</div>
+</label>
+
+</td>
 {% endfor %}
 
 <th><input type="submit"></th>
