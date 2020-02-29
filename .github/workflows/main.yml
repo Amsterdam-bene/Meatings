@@ -1,0 +1,19 @@
+name: deploy
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Go Deploy
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "${{ secrets.DIPREAZIONE }}"
+        ssh -o StrictHostKeyChecking=no dipreazione@perpli.me /home/dipreazione/deploy.sh
