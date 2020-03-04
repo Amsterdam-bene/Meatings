@@ -131,11 +131,15 @@ th:last-child {
 
 .date-td {
     background: white;
-    border-bottom: 8px solid #f0f7fa;
     padding: 10px;
 }
 
 .check {
     background: white;
     padding: 10px;
+}
+
+.totals td {
+    padding: 5px;
+    background: white;
 }

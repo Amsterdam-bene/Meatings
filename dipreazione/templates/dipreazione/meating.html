@@ -37,6 +37,21 @@
 <th class="blank-th"></th>
 </tr>
 
+<tr class="totals">
+<th class="blank-th"></th>
+
+{% for t in totals %}
+<td>
+{% if t != 0 %}
+{{ t }}
+{% endif %}
+
+</td>
+{% endfor %}
+
+<th class="blank-th"></th>
+</tr>
+
 
 {% for r in rows %}
 <tr>

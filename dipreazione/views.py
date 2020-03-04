@@ -41,9 +41,14 @@ def meating(request, meating_id):
     )
 
     by_meater = collections.defaultdict(dict)
-    
+    date_count = collections.Counter()
+
     for p in preferences:
         by_meater[p.meater][p.date] = True
+        date_count[p.date] += 1
+
+    totals = [ date_count[date]
+         for date in potential_dates ]
 
     rows = []
 
@@ -57,6 +62,7 @@ def meating(request, meating_id):
     c = {
         'meating': meating,
         'potential_dates': potential_dates,
+        'totals': totals,
         'rows': rows,
     }
 
