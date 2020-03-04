@@ -13,6 +13,14 @@
 <div id="tag2">DIPREAZIONE</div>
 <hr>
 <div id="name">{{ meating.name }}</div>
+
+{% if histogram %}
+<div id="recap">
+Se tutto va bene, ci vediamo attorno al <span class="recapdate">{{ histogram.0.0 }}</span>
+</div>
+
+{% endif %}
+
 </div>
 
 
@@ -20,7 +28,7 @@
 
 
 <div id='cont'>
-<table>
+<table id='tabellone'>
 
 
 <tr>
@@ -91,4 +99,15 @@
 
 </form>
 
+</table>
+
+</div>
+
+<hr class='sep'>
+
+<table id="histogram">
+<tr><th>Data</th><th>Preferenze</th></tr>
+{% for date, count in histogram %}
+<tr><td>{{ date }}</td><td>{{ count }}</td></th>
+{% endfor %}
 </table>

@@ -13,15 +13,16 @@ tr {
 }
 
 table {
-    border-spacing: 4px;
+   border-spacing: 4px;
 }
 
-td, th {
-  text-align: center;
+
+#tabellone td, #tabellone th {
+    text-align: center;
     padding: 0px;
 }
 
-th {
+#tabellone th {
   background: white;
   border: 0px;
   position: sticky;
@@ -37,11 +38,12 @@ th {
     background: lightgray;
     padding: 10px;
 }
-th:first-child {
+
+#tabellone th:first-child {
   left: 0;  
 }
 
-th:last-child {
+#tabellone th:last-child {
   right: 0;  
 }
 
@@ -129,7 +131,7 @@ th:last-child {
     background: #f0f7fa;
 }
 
-.date-td {
+#tabellone .date-td {
     background: white;
     padding: 10px;
 }
@@ -139,7 +141,25 @@ th:last-child {
     padding: 10px;
 }
 
-.totals td {
+#tabellone .totals td {
     padding: 5px;
     background: white;
+}
+
+.sep {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#histogram td:nth-child(2) {
+    text-align: right;
+}
+
+#recap {
+    padding-top: 20px;
+}
+
+.recapdate {
+    font-weight: bold;
 }

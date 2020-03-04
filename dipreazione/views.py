@@ -64,6 +64,7 @@ def meating(request, meating_id):
         'potential_dates': potential_dates,
         'totals': totals,
         'rows': rows,
+        'histogram': date_count.most_common(),
     }
 
     return render(request, 'dipreazione/meating.html', c)
