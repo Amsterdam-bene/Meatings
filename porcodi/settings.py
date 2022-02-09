@@ -23,11 +23,18 @@ DEBUG = (SECRET_KEY == DEBUG_SECRET_KEY)
 
 ALLOWED_HOSTS = [
     'dipreazione.perpli.me',
-
     'localhost',
     '127.0.0.1',
     '[::1]',
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.perpli.me',
+    'http://*.perpli.me',
+    'https://*.127.0.0.1',
+    'http://*.127.0.0.1',
+]
+
 
 
 # Application definition
