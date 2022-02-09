@@ -81,9 +81,7 @@ def submit_meating(request, meating_id):
         meater=meater
     )
 
-    already_submitted = len(old_prefs[:1]) != 0
-    if already_submitted:
-        return HttpResponse("SCIALLA")
+    old_prefs.delete()  # allow re-posting same name different dates
 
     pref_dates = request.POST.getlist('dates')
     
